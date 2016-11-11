@@ -1,2 +1,1 @@
-# Big_Data_Seminar
-Latex Workspace
+# Seminar_big_data
