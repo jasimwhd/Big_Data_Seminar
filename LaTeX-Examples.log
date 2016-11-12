@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.10.20)  11 NOV 2016 03:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.10.20)  12 NOV 2016 01:19
 entering extended mode
 **./LaTeX-Examples.tex
 (LaTeX-Examples.tex
@@ -365,43 +365,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 53--68
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 69--70
-
- []
-
 [2 <./Figure1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 81--90
+Underfull \hbox (badness 10000) in paragraph at lines 74--83
 
  []
 
 (LaTeX-Examples.bbl [3])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 116.
- [4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 116.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 109.
+ [4] [5]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 109.
  (LaTeX-Examples.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 116.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 116.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 109.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 109.
 Package rerunfilecheck Info: File `LaTeX-Examples.out' has not changed.
 (rerunfilecheck)             Checksum: F32FC0C6D6AAEED8150C527677313A8C;142.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 116.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 109.
  ) 
 Here is how much of TeX's memory you used:
- 5494 strings out of 493334
- 79987 string characters out of 3139242
- 177849 words of memory out of 3000000
- 8967 multiletter control sequences out of 15000+200000
- 5765 words of font info for 21 fonts, out of 3000000 for 9000
+ 5500 strings out of 493334
+ 80031 string characters out of 3139242
+ 177872 words of memory out of 3000000
+ 8970 multiletter control sequences out of 15000+200000
+ 6111 words of font info for 22 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  29i,7n,25p,1324b,459s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Program Files/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmr9.pfb>
-Output written on LaTeX-Examples.pdf (4 pages, 140301 bytes).
+ts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmti10.pfb>
+Output written on LaTeX-Examples.pdf (5 pages, 155542 bytes).
 PDF statistics:
- 103 PDF objects out of 1000 (max. 8388607)
- 41 named destinations out of 1000 (max. 500000)
+ 113 PDF objects out of 1000 (max. 8388607)
+ 43 named destinations out of 1000 (max. 500000)
  22 words of extra memory for PDF output out of 10000 (max. 10000000)
 

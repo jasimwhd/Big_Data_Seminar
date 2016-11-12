@@ -1,3 +1,8 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: LaTeX-Examples.aux
 The style file: splncs.bst
 Database file #1: Example-Bib.bib
+Warning--empty journal in 7
+Warning--there's no year in 7
+You can't pop an empty literal stack for entry 7
+while executing---line 1078 of file splncs.bst
+(There was 1 error message)
