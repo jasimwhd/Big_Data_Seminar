@@ -38,7 +38,7 @@ Predictive Analytics (PA) has replaced the idea of ad-hoc data analysis by fact 
 \section{Introduction}
 In recent years, there is a flood of data that is shared or generated from various sources. This data is usually presented in an unstructured format such as videos, audios, texts, images. The presented data could or could not be related to each other or there could be a possibility of having some hidden patterns. To perform any sort of analysis, analysts cannot use such unstructured data directly. Such data requires conversion into a well-formed format (similar to a relational data), which could be used by data scientists for purpose of analysis on them. As a result, this structured data can then be used to decipher hidden meanings or pattern which supports prediction of market behavior, enterprise needs, enabling precision based decisioning using technique called Predictive Analytics.
 \subsection{What is Predictive Analytics?}
-Predictive Analytics is the process of discovering artifacts or useful information from a set of data (structured,unstructured or semi-structured) in order to make predictions and assessment about future results.
+Predictive Analytics is the process of predicting useful information from a set of data (structured,unstructured or semi-structured).
 It surrounds techniques from statistics, data mining, machine learning and artificial intelligence.\vspace{-2mm}
 
 \subsubsection{Predictive Analytics steps:}As per general guideline, the steps along with percentage of time spent on each of the step are as follows: \newline
@@ -66,29 +66,57 @@ Figure \ref{fig:Figure1} shows Predictive Analytics process which is followed ac
 \end{figure}
 \newline
 \subsubsection{Techniques available:}
-From predictive analytics process, modeling and evaluation steps are where analysts use algorithms to produce key information they desire. Predictive modeling algorithms \cite{7} are divided into two groups: \textit{Supervised Learning} and \textit{Unsupervised Learning}. \\
-In Supervised Learning algorithms, the predictor value or target variable is \textit{supervisor}, it is the column in dataset that is used for predicting value from other column values. The principal algorithms under supervised learning are \textit{regression} for continuous target variable and \textit{classification} for class based on target variable. Supervised learning is also called sometimes as \textit{predictive modeling}. \\
-In Unsupervised Learning algorithms, which is also sometimes called as \textit{descriptive modeling}. It contains no target variable or class label. Analysis is done by grouping or clustering the dataset based on proximities of other input values. Each cluster is given a label name to uniquely identify from other clusters.
+From predictive analytics process, modeling and evaluation steps are where analysts use algorithms to produce key information they desire. Predictive modeling algorithms \cite{7} falls under Supervised Learning. In Supervised Learning, the predictor value or target variable is \textit{supervisor}, it is the column in dataset that is used for predicting value from other column values. It is divided into two sets:
+\begin{enumerate}
+	\item Classification: class based or discrete target variable
+	\item Regression: continuous target variable 
+\end{enumerate} 
+Figure \ref{fig:Figure2} shows Predictive Analytics techniques used for modeling\cite{8}.
+\begin{figure}[htbp]
+	% center the image.
+	\centering
+	
+	% include a png file. Adapt size to 0.5 * textwidth and retain aspect ratio (!)
+	%	\resizebox{\textwidth}{!}{Figure1.png}}
+	% NOTE: if possible do not include bitmap graphics in your paper, if available use
+	% a vector graphics format
+	\includegraphics[scale=0.35]{Figure2.jpg}
+	\caption{Predictive analytics techniques}
+	\label{fig:Figure2}
+\end{figure}
 
 \vspace{-4mm}
 \subsection{Predictive Analytics: Harness the power of Big Data}Almost every decision making process, be it in any enterprise, involves predictive analytics to drive their business better and helps gaining competitive edge in the market. Decision making in current era is based on day-to-day operational business data rather than on only special projects or scenario. Current tools and technologies are unsatisfactory and not up to standards to process such huge chunks of operational data. They are also unable to make in-depth insight and generate value. \newline
-Thanks to Big Data technology and tools, predictive analytics can be applied to deluge of data at enterprise level. We have now many ways to tackle and test different predictive models at various level of framework for business strategies. Contrarily, there are also side-effects if the tools are not applied correctly, it could lead to loss of business value and shares at incredibly surprising pace.\newline
+Thanks to Big Data technology and tools, predictive analytics can be applied to deluge of data at enterprise level, sometimes also called as Big Data Analytics. We have now many ways to tackle and test different predictive models at various level of framework for business strategies. Figure \ref{fig:Figure3} shows delineation of characteristics of Predictive Analytics techniques in transactional databases vs big data technologies. The former is based on prediction through historical structured data whereas big data platform can be used for modeling in real-time with structured, unstructured or semi-structured data. The common methods involved in transactional databases are data mining algorithms such as decision trees, regression, clustering, association rules, etc. In big data mediums, advanced techniques such as speech recognition, mobile based analytics, etc. [\cite{7}].\\
 In the upcoming sections, we will be providing the conjunction of Predictive Analytics with Big Data technology and bring the following topics in coherence:\newline
 (1) understanding big data architecture for analytical perspective \newline
 (2) comparison and assessment of big data analytical tools used for predictions \newline
 (3) address few of the challenges which collides interest of predictive analytics with big data. One of the key challenges being privacy- arising from ever increasing data from online services and personal devices such as mobile phones. These are subjected to risk of personal information being exposed for illicit uses. \newline
 (4) discuss example from Enterprise Resource Planning (ERP) systems, and explore the opportunities of predictive analytics on ERP system's integrated big data hub. \newline
 (5) discuss about Complex Event Processing which deals in identifying complex events based on the rules dictated by users of the system. In order to avoid the manual intervention of users for providing progressive rules, we will discuss about the framework that includes Predictive Analytics technologies in Complex Event Processing tools and applications. \newline
-(6) case study demonstrating the power of predictive analytics coupled with big data technology. \newline
-
-
-
+(6) case study demonstrating the power of predictive analytics coupled with big data technology.
+\begin{figure}[htbp]
+	% center the image.
+	\centering
+	\vspace{-0.85cm}
+	% include a png file. Adapt size to 0.5 * textwidth and retain aspect ratio (!)
+	%	\resizebox{\textwidth}{!}{Figure1.png}}
+	% NOTE: if possible do not include bitmap graphics in your paper, if available use
+	% a vector graphics format
+	\hspace*{-0.45cm}
+	\includegraphics[scale=0.6]{Figure3.jpg}
+	\caption{Predictive analytics in traditional databases vs Big Data}
+	\label{fig:Figure3}
+	\vspace{3.5cm}
+\end{figure}
 \section{Big Data System Architecture}
 
 \subsection{Big Data Layered View}
 \subsection{Big Data Value Chain View}
 
-\section{Predictive Analytics tools}
+\section{Predictive Analytics Technologies}
+\subsection{Big Data Platforms: Hadoop and Spark}
+\subsection{Big Data Analytics Tools}
 \subsection{Results: Comparison and Strategies}
 \section{Issues in predictive analytics}
 \subsection{Privacy challenges using Big Data analytics}
@@ -99,7 +127,7 @@ In the upcoming sections, we will be providing the conjunction of Predictive Ana
 \subsection{Exploiting the combined value of Complex Event Processing and Predictive Analytics}
 \subsection{Conceptual CEP-PA framework}
 \subsection{Proof of Concept}
-\section{Case Study}
+\section{Case Study: Fraud Analytics}
 
 \section{Conclusion}
 

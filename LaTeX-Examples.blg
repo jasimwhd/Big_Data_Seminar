@@ -1,8 +1,13 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: LaTeX-Examples.aux
 The style file: splncs.bst
 Database file #1: Example-Bib.bib
+Warning--entry type for "8" isn't style-file defined
+--line 72 of file Example-Bib.bib
 Warning--empty journal in 7
 Warning--there's no year in 7
 You can't pop an empty literal stack for entry 7
 while executing---line 1078 of file splncs.bst
-(There was 1 error message)
+Warning--there's no year in 8
+You can't pop an empty literal stack for entry 8
+while executing---line 1078 of file splncs.bst
+(There were 2 error messages)
