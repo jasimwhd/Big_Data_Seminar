@@ -110,25 +110,36 @@ In the upcoming sections, we will be providing the conjunction of Predictive Ana
 	\vspace{3.5cm}
 \end{figure}
 \section{Big Data System Architecture}
+A big data system is immensely complex. In order to demonstrate the architecture of predictive analytics in big data, we should firstly understand the categorization of two paradigms of big data analytics with respect to processing time requirements:
+\begin{itemize}
+	\item Stream Processing: Streaming processing data is dependent on fresh data i.e. it needs to be analyzed as soon as it is available. Some famous open source systems available are Storm and Kafka.
+	\item Batch Processing: In batch processing, data is stored as chunk and then analyzed. One of the most famous models available is Map Reduce.
+\end{itemize}
+In this paper, we will discuss framework based on batch processing types, since it is widely adopted in industries. We will show one such framework placed on value chain for big data analytics\cite{5}. Big data value chain framework involves four stages i.e. generation, acquisition, storage and analytics. We will see leading technologies offered for each of the phases with special attention on analytics phase.
+\subsection{Big Data Value Chain architecture}
 
-\subsection{Big Data Layered View}
-\subsection{Big Data Value Chain View}
 
 \section{Predictive Analytics Technologies}
 \subsection{Big Data Platforms: Hadoop and Spark}
-\subsection{Big Data Analytics Tools}
+\subsection{Big Data Predictive Analytics Tools}
 \subsection{Results: Comparison and Strategies}
 \section{Issues in predictive analytics}
 \subsection{Privacy challenges using Big Data analytics}
 \subsection{Best practices available for preserving privacy}
 \section{Example: Big Data Predictive Analytics in ERP Systems}
+\subsection{ERP System Landscape}
+\subsection{ERP with Big Data Using Predictive Analytics}
+\subsection{Predictive Modeling tasks in ERP systems}
 \section{Conceptual Framework: Predictive Complex Event Processing}
 \subsection{Background}
 \subsection{Exploiting the combined value of Complex Event Processing and Predictive Analytics}
 \subsection{Conceptual CEP-PA framework}
 \subsection{Proof of Concept}
-\section{Case Study: Fraud Analytics}
-
+\section{Case Study: Predicting Election Trends using Twitter: Hillary Clinton vs Donald Trump}
+\subsection{Building the network of Twitter users}
+\subsection{Inferring the opinion of users}
+\subsection{Predicting Election Trends}
+\subsection{Results}
 \section{Conclusion}
 
 \bibliographystyle{splncs} % other possible styles: plain, unsrt, abbrv, alpha
