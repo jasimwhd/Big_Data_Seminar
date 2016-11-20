@@ -115,8 +115,38 @@ A big data system is immensely complex. In order to demonstrate the architecture
 	\item Stream Processing: Streaming processing data is dependent on fresh data i.e. it needs to be analyzed as soon as it is available. Some famous open source systems available are Storm and Kafka.
 	\item Batch Processing: In batch processing, data is stored as chunk and then analyzed. One of the most famous models available is Map Reduce.
 \end{itemize}
-In this paper, we will discuss framework based on batch processing types, since it is widely adopted in industries. We will show one such framework placed on value chain for big data analytics\cite{5}. Big data value chain framework involves four stages i.e. generation, acquisition, storage and analytics. We will see leading technologies offered for each of the phases with special attention on analytics phase.
+In this section, we will discuss architecture based on batch processing types, since it is widely adopted in industries. We will show one such framework placed on value chain for big data analytics\cite{5}. Big data value chain framework involves four stages i.e. generation, acquisition, storage and analytics. In this work, we will see leading technologies in analysis phase.
 \subsection{Big Data Value Chain architecture}
+This architecture is based on system engineering approach, well recognized in industries, the notion is to break down the big-data system into four continuous phases in horizontal axis as shown in Figure \ref{fig:Figure4} \cite{5}.
+\begin{figure}[htbp]
+	% center the image.
+	\centering
+	\vspace{-0.85cm}
+	% include a png file. Adapt size to 0.5 * textwidth and retain aspect ratio (!)
+	%	\resizebox{\textwidth}{!}{Figure1.png}}
+	% NOTE: if possible do not include bitmap graphics in your paper, if available use
+	% a vector graphics format
+	\hspace*{-0.45cm}
+	\includegraphics[scale=0.6]{Figure4.jpg}
+	\caption{Big data value chain architecture. Horizontal axis composes of four continuous phases for data life cycle. For each stage, we demonstrate cutting edge technologies available past ten years in vertical axis}
+	\label{fig:Figure4}
+	\vspace{3.5cm}
+\end{figure}
+
+\paragraph{Data Analysis:} It is the main and concluding step from big data value chain that focuses on the aspect of analytics. This phase supports mechanisms or tools to investigate, transform, and modeling data to discover insights. We will discuss hereby some classification metric of big data analytics. Furthermore, we will describe common methods in big data analytics that together build the pillar for making predictions comprehensively.
+\subsubsection{Categories:}
+Blackett et al \cite{10} proposed classification of big data analytics into three levels as follows:
+\begin{enumerate}
+	\item Descriptive Analytics: analyses historical dataset to describe what happened. It is widely used with business intelligence or ERP solutions.
+	\item Predictive Analytics: focuses on future predictions and trends, uses supervised learning algorithms to understand trends, and data mining exacts insight.
+	\item Prescriptive Analytics: focuses on decision making. For instance, simulation is used to analyze the systems and recognize various optimization techniques to get efficient solutions.
+\end{enumerate}
+\subsubsection{Common Methods:}Even though the motive, application domains varies for different types of analysis, there exists three common methods that are useful to discuss.
+\begin{enumerate}
+	\item Data Visualization: It helps in information visualization using visual interface. Arming experts with such tools would help in making predictions much more smooth as it would provide easy, user-friendly access to results.
+	\item Statistical Analysis: It is related to statistical theory, sub-area of applied mathematics. Randomness is modeling using probability theory. This area performs inferential analysis on large data set for prediction processes.
+	\item Data Mining: It is the computational process of discovering patterns in large data sets.\cite{5} Different applications applies principles and techniques from data mining such as regression, clustering, classification and link detection. Furthermore, advance algorithms such as deep learning are current trending in big data analytics.
+\end{enumerate}
 
 
 \section{Predictive Analytics Technologies}
