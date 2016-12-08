@@ -15,7 +15,7 @@
 \usepackage[plainpages=false, pdfpagelabels, bookmarks,  colorlinks=false, % Hyperlinks in PDF output mit blauen Rahmen
                linkbordercolor={0 0 1}, filebordercolor={0 0 1}, citebordercolor={0 0 1},
               menubordercolor={0 0 1}, urlbordercolor={0 0 1}]{hyperref}
-
+\usepackage{booktabs}
 
 \title{Seminar Predictive Analytics in Big Data WS 2016/17}
 \author{Jasim Waheed Ansari}
@@ -28,6 +28,7 @@
 	\nocite{3}
 	\nocite{4}
 	\nocite{5}
+	\nocite{14}
 
 \maketitle
 
@@ -83,6 +84,7 @@ Figure \ref{fig:Figure2} shows Predictive Analytics techniques used for modeling
 	\includegraphics[scale=0.35]{Figure2.jpg}
 	\caption{Predictive analytics techniques}
 	\label{fig:Figure2}
+	
 \end{figure}
 
 \vspace{-4mm}
@@ -98,7 +100,7 @@ In the upcoming sections, we will be providing the conjunction of Predictive Ana
 \begin{figure}[htbp]
 	% center the image.
 	\centering
-	\vspace{-0.85cm}
+	\vspace{-0.5em}
 	% include a png file. Adapt size to 0.5 * textwidth and retain aspect ratio (!)
 	%	\resizebox{\textwidth}{!}{Figure1.png}}
 	% NOTE: if possible do not include bitmap graphics in your paper, if available use
@@ -107,7 +109,7 @@ In the upcoming sections, we will be providing the conjunction of Predictive Ana
 	\includegraphics[scale=0.6]{Figure3.jpg}
 	\caption{Predictive analytics in traditional databases vs Big Data}
 	\label{fig:Figure3}
-	\vspace{3.5cm}
+	\vspace{-0.5em}
 \end{figure}
 \section{Big Data System Architecture}
 A big data system is immensely complex. In order to demonstrate the architecture of predictive analytics in big data, we should firstly understand the categorization of two paradigms of big data analytics with respect to processing time requirements:
@@ -118,6 +120,15 @@ A big data system is immensely complex. In order to demonstrate the architecture
 In this section, we will discuss architecture based on batch processing types, since it is widely adopted in industries. We will show one such framework placed on value chain for big data analytics\cite{5}. Big data value chain framework involves four stages i.e. generation, acquisition, storage and analytics. In this work, we will see leading technologies in analysis phase.
 \subsection{Big Data Value Chain architecture}
 This architecture is based on system engineering approach, well recognized in industries, the notion is to break down the big-data system into four continuous phases in horizontal axis as shown in Figure \ref{fig:Figure4} \cite{5}.
+\paragraph{Data Analysis:} It is the main and concluding step from big data value chain that focuses on the aspect of analytics. This phase supports mechanisms or tools to investigate, transform, and modeling data to discover insights. We will discuss hereby some classification metric of big data analytics. Furthermore, we will describe common methods in big data analytics that together build the pillar for making predictions comprehensively. We will then give an overview picture of nomenclature of big data analytics with respect to data type.
+\subsubsection{Categories:}
+Blackett et al \cite{10} proposed classification of big data analytics into three levels as follows:
+\begin{enumerate}
+	\item Descriptive Analytics: analyses historical dataset to describe what happened. It is widely used with business intelligence or ERP solutions.
+	\item Predictive Analytics: focuses on future predictions and trends, uses supervised learning algorithms to understand trends, and data mining exacts insight.
+	\item Prescriptive Analytics: focuses on decision making. For instance, simulation is used to analyze the systems and recognize various optimization techniques to get efficient solutions.
+\end{enumerate} 
+
 \begin{figure}[htbp]
 	% center the image.
 	\centering
@@ -130,36 +141,148 @@ This architecture is based on system engineering approach, well recognized in in
 	\includegraphics[scale=0.6]{Figure4.jpg}
 	\caption{Big data value chain architecture. Horizontal axis composes of four continuous phases for data life cycle. For each stage, we demonstrate cutting edge technologies available past ten years in vertical axis}
 	\label{fig:Figure4}
-	\vspace{3.5cm}
+	\vspace{-0.5em}
+\end{figure}
+\section{Predictive Analytics Technologies}
+The technology that is adept in supporting big data includes  new kinds of database platforms(for example, Hadoop and Spark) as a central core of big data systems, predictive tools are built on top of them to perform analytics in cloud, thus enabling enterprises with scalability and on-demand usage. We will see software stacks as framework for predictive analytics in Hadoop and Spark respectively.
+\subsection{Hadoop Software Stack}
+It is a massive framework encompassing different modules, including Hadoop Distributed File System (HDFS) \& Hbase for data storage, MapReduce as computation core for analysis on data, Flume \&  Sqoop as integration tools. This framework is in accordance with big data value chain architecture and it is used as a powerful solution for batch-type processing applications. The layered core software libraries is shown in figure \ref{fig:Figure4}. On top of this framework is the data mining library called \textit{Mahout}. \subsubsection{Mahout:}It contains major algorithms responsible for clustering, classification and recommendation (collaborative filtering) to support large-scale predictive analytics model. One of the most famous ways to operate on data needed for such a model is to deploy Mahout in machine that is already executing Hadoop\cite{12}. Hadoop nominates a master system coordinates with the other systems (i.e. Map systems and Reduce systems) applied in its distributed processing.
+
+\begin{figure}[htbp]
+	% center the image.
+	\centering
+	\vspace{0.85cm}
+	% include a png file. Adapt size to 0.5 * textwidth and retain aspect ratio (!)
+	%	\resizebox{\textwidth}{!}{Figure1.png}}
+	% NOTE: if possible do not include bitmap graphics in your paper, if available use
+	% a vector graphics format
+	\hspace*{-0.45cm}
+	
+	\includegraphics[scale=0.7]{Figure6.jpg}
+	\caption{Hadoop Software Stack, covering the major function of big data value chain, inclusive of data import, storage and processing}
+	\label{fig:Figure5}
+	\vspace{-0.5em}
+\end{figure}
+\subsection{Spark Framework for real-time analytics}
+Another famous open-source platform for processing big data that is best applicable for stream-oriented data processing. Spark is viewed as a strong contender to replace MapReduce capabilities of Hadoop. Spark sits on top of existing Hadoop cluster which relies on YARN for efficient resource management and job scheduling. 
+\subsubsection{MLlib:}It is effective for iterative-based large scale machine-learning applications for predictive analytics. The algorithms are written in Scala and the linear algebra libraries uses native C++. MLlib includes support for JAVA, Scala, and Python APIs. They are released as part of Spark project under Apache 2.0. Figure \ref{fig:Figure6} shows Apache Spark ecosystem, where MLlib is built on top of Spark.
+\begin{figure}[htbp]
+	% center the image.
+	\centering
+	\vspace{0.85cm}
+	% include a png file. Adapt size to 0.5 * textwidth and retain aspect ratio (!)
+	%	\resizebox{\textwidth}{!}{Figure1.png}}
+	% NOTE: if possible do not include bitmap graphics in your paper, if available use
+	% a vector graphics format
+	\hspace*{-0.45cm}
+	
+	\includegraphics[scale=0.7]{Figure7.jpg}
+	\caption{Spark Ecosystem}
+	\label{fig:Figure6}
+	\vspace{-0.5em}
 \end{figure}
 
-\paragraph{Data Analysis:} It is the main and concluding step from big data value chain that focuses on the aspect of analytics. This phase supports mechanisms or tools to investigate, transform, and modeling data to discover insights. We will discuss hereby some classification metric of big data analytics. Furthermore, we will describe common methods in big data analytics that together build the pillar for making predictions comprehensively.
-\subsubsection{Categories:}
-Blackett et al \cite{10} proposed classification of big data analytics into three levels as follows:
-\begin{enumerate}
-	\item Descriptive Analytics: analyses historical dataset to describe what happened. It is widely used with business intelligence or ERP solutions.
-	\item Predictive Analytics: focuses on future predictions and trends, uses supervised learning algorithms to understand trends, and data mining exacts insight.
-	\item Prescriptive Analytics: focuses on decision making. For instance, simulation is used to analyze the systems and recognize various optimization techniques to get efficient solutions.
-\end{enumerate}
-\subsubsection{Common Methods:}Even though the motive, application domains varies for different types of analysis, there exists three common methods that are useful to discuss.
-\begin{enumerate}
-	\item Data Visualization: It helps in information visualization using visual interface. Arming experts with such tools would help in making predictions much more smooth as it would provide easy, user-friendly access to results.
-	\item Statistical Analysis: It is related to statistical theory, sub-area of applied mathematics. Randomness is modeling using probability theory. This area performs inferential analysis on large data set for prediction processes.
-	\item Data Mining: It is the computational process of discovering patterns in large data sets.\cite{5} Different applications applies principles and techniques from data mining such as regression, clustering, classification and link detection. Furthermore, advance algorithms such as deep learning are current trending in big data analytics.
-\end{enumerate}
-
-
-\section{Predictive Analytics Technologies}
-\subsection{Big Data Platforms: Hadoop and Spark}
 \subsection{Big Data Predictive Analytics Tools}
-\subsection{Results: Comparison and Strategies}
+Extremely strong knowledge in statistics and technical skills were previously required to carry out predictive modeling, due to complexities in the usage of statistical models and tools. Advanced abilities were also required in analyzing the result. However, due to the increasing growth of technology the tools are no more focused to advanced experts. Business experts from various organizations can use tools marketed by proprietary software enterprises and open source organizations to predict their business growth.
+Figure \ref{fig:Figure7} \cite{14} shows Predictive Analytics tools classification with its characteristics and examples.
+
+\begin{figure}[htbp]
+	% center the image.
+	\centering
+	
+	\vspace{-1.5em}
+	% include a png file. Adapt size to 0.5 * textwidth and retain aspect ratio (!)
+	%	\resizebox{\textwidth}{!}{Figure1.png}}
+	% NOTE: if possible do not include bitmap graphics in your paper, if available use
+	% a vector graphics format
+	\hspace*{-0.45cm}
+	
+	\includegraphics[scale=0.65]{Figure8.jpg}
+	\caption{Predictive Analytics Tools Classification and Examples}
+	\label{fig:Figure7}
+	
+\end{figure}
+\vspace{-1.5em}
+\subsubsection{Comparison of open source tools}
+The comparison matrix\cite{15} in the given figure \ref{fig:Figure8} explains some of the open source tools (described previously) capabilities with respect to data science techniques. It needs to be observed that Weka offers the maximum support on an open-source level. In the later section of this paper, we will highlight the case study of predicting chronic kidney diseases using Weka tool.
+
+ 
+\begin{figure}[htbp]
+	% center the image.
+	\centering
+	
+	\vspace{-1.3em}
+	% include a png file. Adapt size to 0.5 * textwidth and retain aspect ratio (!)
+	%	\resizebox{\textwidth}{!}{Figure1.png}}
+	% NOTE: if possible do not include bitmap graphics in your paper, if available use
+	% a vector graphics format
+	\hspace*{-0.45cm}
+	
+	\includegraphics[scale=0.65]{Figure9.jpg}
+	\caption{Comparison matrix showing few open source tools supporting common predictive analytics techniques}
+	\label{fig:Figure8}
+	
+\end{figure} 
 \section{Issues in predictive analytics}
-\subsection{Privacy challenges using Big Data analytics}
+Predictive analytics are built on set model solutions, and if these are not optimized and addressed properly, they may present problems such as slow down the progress and alter the business analytics solutions. We will address few of the issues associated in this section.
+\begin{itemize}
+	\item Data quality: Data is fundamental to predictive analytics, and it is highly recommended to have a deeper knowledge on the available data before investing in any predictive analytics technologies. Andreescu, et al figured out that the poor data could lead to erroneous results. In order to maximize the quality, data should be subjected to data preparation, cleaning and formatting. All of which are significant part of data mining steps.\\
+	\item Model complexity: Analytic solutions developed for predictions are generally known for taking overly complex models and delivering easy-to-understand results from them. But, companies get carried away and started to expect much more beyond the tools capabilities. This eventually end up slowing down the delivering of report. To maximize the result while minimizing the time to deliver reports, an effective model life-cycle management approach is needed to be adopted.\\
+	\item Communication gap: There may be a gap of conveying the insights from data scientists to business users. In order to overcome such problems, enterprises should have skilled enough people not only in analyzing trend but also in documenting it and presenting this info in crisp and compelling terms.\\
+	\item Privacy concerns: This is one of the key issues of all. As the big data continues to grow bigger, the analytical capabilities on them poses severe risk of discovering insights in form of individual data. Therefore, such analytical insight could never rule out to make individual data anonymised. We look into some best practices available for preserving privacy of the user data. 
+\end{itemize}
 \subsection{Best practices available for preserving privacy}
+In this section, we discuss three privacy preservation methods \cite{16}.
+\begin{enumerate}
+	\item Data Anonymization: It is the process of masking or changing data that will be published in such a way that doesn't conceal sensitive information such as full name, social security number etc. The problem with anonymization is that the sensitive information can still be de-identified through linkability with external sources. Three privacy methods with respect to data anonymization are as follows:
+	\subitem K-Anonymity: A dataset is K-Anonymous if for any row in the dataset with given attributes, there exists atleast K-1 similar records. It is achieved by suppression or generalization.
+	In suppression, attributes are masked by some constant values 0,* etc.
+	In generalization, identifiers are masked by a more generic value from levels up the hierarchy.
+	\subitem L-Diversity: It tries to bring diversity in sensitive data record. It maintains that each equivalence class has atleast L disparate values of sensitive columns.
+	\subitem T-Closeness: A dataset is T-closed if distance between distribution of sensitive column data in a particular equivalence class and distribution in whole dataset is no more than a threshold value of T.
+	\item Notice and Consent: It is one of the most common method for web applications and services. The consumer needs to approve the notice before using the services. It imposes a privacy preservation on the user.
+	\item Differential Privacy: It is a method empowering data scientists to extract the overall picture from datasets but holding strong privacy on individual data. In contrast to anonymization, there is no modification done to data but there is an added firewall-like interface above the dataset to calculate the results and add much needed inacurracies.
+\end{enumerate}
 \section{Example: Big Data Predictive Analytics in ERP Systems}
-\subsection{ERP System Landscape}
+Enterprise Resource Planning(ERP) systems are business process management software, which integrates applications across different departments of an enterprise to provide a holistic view of employees, which corresponds to financial impact on the business. Adding predictive analytics capabilities to ERP systems render progressive guideline to yield effective informed decision. 
+\subsection{Enterprise Platform for Decision Management in ERP System}
+Predictive analytics on enterprise level enables unlocking insights from structured and unstructured data, identifying classification, associations, and segmentations. Figure\ref{fig:Figure9} shows deployment of Decision as a Service in ERP system landscape. This framework is potent for transforming large set of transactional data into mathematical form for being usable by predictive models.
+\begin{figure}[htbp]
+	% center the image.
+	\centering
+	
+	\vspace{-1.3em}
+	% include a png file. Adapt size to 0.5 * textwidth and retain aspect ratio (!)
+	%	\resizebox{\textwidth}{!}{Figure1.png}}
+	% NOTE: if possible do not include bitmap graphics in your paper, if available use
+	% a vector graphics format
+	\hspace*{-0.45cm}
+	
+	\includegraphics[scale=0.65]{Figure11.jpg}
+	\caption{Enterprise Platform for Decision Making \cite{2}}
+	\label{fig:Figure9}
+	
+\end{figure}
+
 \subsection{ERP with Big Data Using Predictive Analytics}
-\subsection{Predictive Modeling tasks in ERP systems}
+In current business situations, integrating \cite{2} big data solutions to ERP helps in using big data from diverse sources such as web logs, documents, call center transactions, sensors etc.
+Figure \ref{fig:figure10} discusses big data predictive analytics framework aimed at automating operational decisioning processes in enterprises using SAP ERP system.
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{Figure12}
+	\caption{Application Framework for Big Data Predictive Analytics in ERP Systems \cite{2}}
+	\label{fig:figure10}
+\end{figure}
+
+\subsection{Predictive Analytics steps in ERP systems}
+The key factor for performing analytics for prediction is to build a predictive model. Following \ref{fig:figure11} explains the steps involved in model development: 
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{Figure12.jpg}
+	\caption{Model Development Tasks}
+	\label{fig:figure11}
+\end{figure}
+The author emphasizes that decisioning framework for ERP system should be designed to be agile and adaptive. Future work of the explained application framework  is aimed at automating strategical decision making.
 \section{Conceptual Framework: Predictive Complex Event Processing}
 \subsection{Background}
 \subsection{Exploiting the combined value of Complex Event Processing and Predictive Analytics}

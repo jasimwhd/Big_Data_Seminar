@@ -5,6 +5,12 @@ Warning--entry type for "8" isn't style-file defined
 --line 72 of file Example-Bib.bib
 Warning--entry type for "10" isn't style-file defined
 --line 84 of file Example-Bib.bib
+Warning--entry type for "14" isn't style-file defined
+--line 110 of file Example-Bib.bib
+Warning--empty author in 14
+Warning--there's no year in 14
+You can't pop an empty literal stack for entry 14
+while executing---line 1078 of file splncs.bst
 Warning--empty journal in 7
 Warning--there's no year in 7
 You can't pop an empty literal stack for entry 7
@@ -15,4 +21,4 @@ while executing---line 1078 of file splncs.bst
 Warning--there's no year in 10
 You can't pop an empty literal stack for entry 10
 while executing---line 1078 of file splncs.bst
-(There were 3 error messages)
+(There were 4 error messages)

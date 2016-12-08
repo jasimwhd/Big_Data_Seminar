@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{1}
 Chandarana, P., Vijayalakshmi, M.:
@@ -32,6 +32,10 @@ Hu, H., Wen, Y., Chua, T.S., Li, X.:
   tutorial.
 \newblock IEEE Access \textbf{2} (2014)  652--687
 
+\bibitem{14}
+:
+\newblock (Predictive analytics tools)
+
 \bibitem{6}
 Wessler, M.:
 \newblock Predictive analytics for dummies.
@@ -51,5 +55,21 @@ Pilotte, P.:
 \bibitem{10}
 Blackett, G.:
 \newblock (Analytics network-o.r. analytics)
+
+\bibitem{12}
+Bari, A., Chaouchi, M., Jung, T.:
+\newblock Predictive Analytics For Dummies.
+\newblock For Dummies (2016)
+
+\bibitem{15}
+Wimmer, H., Powell, L.M.:
+\newblock A comparison of open source tools for data science.
+\newblock Journal of Information Systems Applied Research \textbf{9}(2) (2016)
+
+\bibitem{16}
+Gosain, A., Chugh, N.:
+\newblock Privacy preservation in big data.
+\newblock International Journal of Computer Applications \textbf{100}(17)
+  (2014)  44--47
 
 \end{thebibliography}
