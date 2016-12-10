@@ -11,11 +11,14 @@
 
 \documentclass[runningheads]{llncs}
 
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
 \usepackage[pdftex]{graphicx}
 \usepackage[plainpages=false, pdfpagelabels, bookmarks,  colorlinks=false, % Hyperlinks in PDF output mit blauen Rahmen
                linkbordercolor={0 0 1}, filebordercolor={0 0 1}, citebordercolor={0 0 1},
               menubordercolor={0 0 1}, urlbordercolor={0 0 1}]{hyperref}
 \usepackage{booktabs}
+\usepackage[utf8]{inputenc}
 
 \title{Seminar Predictive Analytics in Big Data WS 2016/17}
 \author{Jasim Waheed Ansari}
@@ -23,12 +26,7 @@
 	jasim.waheed@rwth-aachen.de}
 
 \begin{document}
-	\nocite{1}
-	\nocite{2}
-	\nocite{3}
-	\nocite{4}
-	\nocite{5}
-	\nocite{14}
+
 
 \maketitle
 
@@ -202,11 +200,6 @@ Figure \ref{fig:Figure7} \cite{14} shows Predictive Analytics tools classificati
 	\label{fig:Figure7}
 	
 \end{figure}
-\vspace{-1.5em}
-\subsubsection{Comparison of open source tools}
-The comparison matrix\cite{15} in the given figure \ref{fig:Figure8} explains some of the open source tools (described previously) capabilities with respect to data science techniques. It needs to be observed that Weka offers the maximum support on an open-source level. In the later section of this paper, we will highlight the case study of predicting chronic kidney diseases using Weka tool.
-
- 
 \begin{figure}[htbp]
 	% center the image.
 	\centering
@@ -223,6 +216,11 @@ The comparison matrix\cite{15} in the given figure \ref{fig:Figure8} explains so
 	\label{fig:Figure8}
 	
 \end{figure} 
+
+\vspace{-1.5em}
+\subsubsection{Comparison of open source tools}
+The comparison matrix\cite{15} in the given figure \ref{fig:Figure8} explains some of the open source tools (described previously) capabilities with respect to data science techniques. It needs to be observed that Weka offers the maximum support on an open-source level. In the later section of this paper, we will highlight the case study of predicting chronic kidney diseases using Weka tool.
+
 \section{Issues in predictive analytics}
 Predictive analytics are built on set model solutions, and if these are not optimized and addressed properly, they may present problems such as slow down the progress and alter the business analytics solutions. We will address few of the issues associated in this section.
 \begin{itemize}
@@ -243,6 +241,7 @@ In this section, we discuss three privacy preservation methods \cite{16}.
 	\item Notice and Consent: It is one of the most common method for web applications and services. The consumer needs to approve the notice before using the services. It imposes a privacy preservation on the user.
 	\item Differential Privacy: It is a method empowering data scientists to extract the overall picture from datasets but holding strong privacy on individual data. In contrast to anonymization, there is no modification done to data but there is an added firewall-like interface above the dataset to calculate the results and add much needed inacurracies.
 \end{enumerate}
+
 \section{Example: Big Data Predictive Analytics in ERP Systems}
 Enterprise Resource Planning(ERP) systems are business process management software, which integrates applications across different departments of an enterprise to provide a holistic view of employees, which corresponds to financial impact on the business. Adding predictive analytics capabilities to ERP systems render progressive guideline to yield effective informed decision. 
 \subsection{Enterprise Platform for Decision Management in ERP System}
@@ -283,17 +282,97 @@ The key factor for performing analytics for prediction is to build a predictive 
 	\label{fig:figure11}
 \end{figure}
 The author emphasizes that decisioning framework for ERP system should be designed to be agile and adaptive. Future work of the explained application framework  is aimed at automating strategical decision making.
-\section{Conceptual Framework: Predictive Complex Event Processing}
-\subsection{Background}
-\subsection{Exploiting the combined value of Complex Event Processing and Predictive Analytics}
-\subsection{Conceptual CEP-PA framework}
-\subsection{Proof of Concept}
-\section{Case Study: Predicting Election Trends using Twitter: Hillary Clinton vs Donald Trump}
-\subsection{Building the network of Twitter users}
-\subsection{Inferring the opinion of users}
-\subsection{Predicting Election Trends}
-\subsection{Results}
-\section{Conclusion}
+
+\section{Conceptual Framework: Predictive Complex Event for Pro-Active Streaming Applications}
+The increasing growth of applications based on streaming data such as Internet of Things(IoT) are gaining popularity for predictive analytics. Data from IoT devices, stock markets for market assessment, credit card fraud detection etc. generated in the form of real-time events, which form complex patterns where such pattern represents a unique event. The need to store, process and analyze these unique events in real-time forms the basis of research area called Complex Event Processing(CEP).
+Even though CEP provides power in making decisions from streaming data on reactive basis by using pre-defined rules, but it lacks the capabilities of predictions using historical data i.e. proactive way. The current prediction techniques involved are based on static model parameters, however CEP engines are susceptible to adaptive algorithms depending on environment. Therefore, we firstly describe the authors' proposed framework based on PA and CEP. Later, we explain adaptive prediction algorithm. We conclude it with evaluation using case study from adaptive traffic management system which show accuracy upto 90\%.
+ 
+\subsection{Proposed Architecture}Proposed Architecture is shown in figure \ref{fig:figure12}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\linewidth]{Figure13.jpg}
+	\caption{CEP-PA Conceptual Architecture \cite{17}}
+	\label{fig:figure12}
+\end{figure}
+Different data from sources is accessed from RESTful web services, and then Adaptive Moving Window Regression (AMWR) algorithm is applied. The predicted data produced from the algorithm is published on the message bus, which has a distributed publisher/subscriber architecture and then CEP Engine accesses it.
+The different components involved in our proposed architecture is described below.
+\subsubsection{A. Adaptive Moving Window Regression(AMWR)} This algorithm handles proactive dynamic IOT data. Generally for statistical data, the predictive model is trained using historical data. Once the model is developed, it cant be changed. However, with changing data and environment the model is prone to damage and adversaries. The author \cite{17} has proposed an approach to retraining the model at regular interval. Three main steps to describe the model is as follows:
+\begin{enumerate}
+	\item Selection of ML algorithm: We are using Support Vector Regression (SVR) to model multi-valued variable or non-linear data. SVR is an extension of Support Vector Machine (SVM), which maps the training dataset to high-dimensional feature space using kernel function, it fits the training set using hyperplane.
+	\item Choice of optimum training window size: The author proposed an algorithm to find the best training window size automatically, so that the error and over-fitting is reduced. The metric to decide the window size is by analyzing Mean Absolute Percentage Error (MAPE). 
+	\item Adaptive size for prediction window: The idea is to have an adaptive size for window so that the accuracy and performance of the model is high enough. The algorithm presented by the author is as follows:
+\begin{algorithm}
+\caption{Adaptive Prediction Window Size}\label{Adaptive Prediction Window Size}
+\begin{algorithmic}[1]
+	\Procedure{PredictionWindow(x\textsubscript{actual},x\textsubscript{predicted})}{}\\MAPE=mean(abs((x\textsubscript{actual}-x\textsubscript{predicted})/x\textsubscript{actual})*100)\\
+	if MAPE \textgreater 20\% then \\
+		PredictionWindow = PredictionWindow - 1 \\
+	else if MAP \textless 5\% then \\
+	PredictionWindow = PredictionWindow + 1 \\
+	else\\
+	PredictionWindow = PredictionWindow\\
+	end if\\
+	return PredictionWindow\\
+	End procudure
+	
+\EndProcedure 
+\end{algorithmic}
+\end{algorithm}
+
+
+\end{enumerate}
+
+
+\subsubsection{B. Complex Event Processing} The different components involved in CEP which provides basic operations on the data generated from different sources are:
+
+\begin{enumerate}
+\item Filters: Discard or keep the events of interest 
+\item Windows: Provides a tool to exact time-related patters from incoming events to dervice complex event
+\item Joins: To correlate events coming from different data streams using AND/OR logical operator
+\item Aggregations: CEP solutions have simple aggregators such as SUM, MIN, MAX etc. to analyze the events
+\end{enumerate}
+
+\subsection{Example: Designing CEP predictive rule for adaptive traffic management} The author has taken the dataset of traffic provided by city of Madrid. The city of Madrid has deployed over a thousand of sensors at fixed locations to monitor the traffic congestion features such as traffic intensity (average number of vehicles per hour) and average traffic speed.
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\linewidth]{Figure15.jpg}
+	\caption{MAPE \% for traffic speed and intensity \cite{17}}
+	\label{fig:figure13}
+\end{figure}
+ \begin{figure}
+	\centering
+	\includegraphics[width=0.8\linewidth]{Figure16.jpg}
+	\caption{Prediction result for traffic speed \cite{17}}
+	\label{fig:figure14}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\linewidth]{Figure17.jpg}
+	\caption{Prediction result for traffic intensity \cite{17}}
+	\label{fig:figure15}
+\end{figure}
+\subsubsection{Result evaluation} We use our proposed algorithm to predict the traffic in future using the aforementioned two factors. The real time data is available using RESTful web service as XML format. We used the historical data of first few hours to develop an initial model of optimum window size. Table given in figure \ref{fig:figure13} shows the error percentage for various window sizes on traffic speed and intensity. Least error percentage for both of the factor is selected during training phase. Once the initial model is deployed and the stream data is plugged in, the predicted data is compared with actual data. If the error starts to increase then window size is needed to be decreased, which in turn retrains the model to track the actual data.
+Figure \ref{fig:figure14} and figure \ref{fig:figure15} explains result of prediction using AMWR algorithm for traffic speed and traffic intensity respectively. We see that this approach results in correctly tracking the predicted data with actual data.
+Once the predicted result is available, CEP can be utilized to infer events. The proposed algorithm for CEP rule for this example is as follows: \\
+\begin{algorithm} 
+	\caption{Example rule for CEP \cite{17}}\label{Example rule for CE}
+	\begin{algorithmic}[1]
+		\Procedure{CEP(speed,intensity)}{}\\
+		for(speed,intensity) TupleWindow(3) do \\
+		if (speed(t) \textless speed\textsubscript{threshold} and intensity(t) \textless \
+		intensity\textsubscript{threshold} AND \\
+	    speed(t + 1) \textless speed(t) and intensity(t + 1) \textless \\
+	    intensity(t) AND \\
+	    speed(t+2) \textless speed(t+1) and intensity(t+2) \textless \\
+        intensity(t + 1)) then \\
+		Generate Complex Event "Congestion" \\
+		end if
+		\EndProcedure 
+	\end{algorithmic}
+\end{algorithm}
+\\It is worth observing that the proposed framework from the use case explained is a promising solution for intelligent transport systems and other applications which are dynamic in nature. 
+\section{Conclusion} In this work, a brief study on role of Predictive Analytics has been analyzed in Hadoop and Spark ecosystem, comaprison of various PA tools, the various challenges involved to carry out PA, an example framework from ERP system to get a lucid idea on how the various enterprises(example, SAP) are adopting the big data analytics infrastructure and a conceptual framework to understand the power of PA into event processing engines. 
+
 
 \bibliographystyle{splncs} % other possible styles: plain, unsrt, abbrv, alpha
 \bibliography{Example-Bib}
